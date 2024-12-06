@@ -84,7 +84,12 @@ function deleteLastNumber () {
 
 //  Clear All Function
 
+
 clearBtn.addEventListener('click', () => {
+    clearAll()
+})
+
+function clearAll () {
     numberClicked = []
     input.value = numberClicked
     changeResult()
@@ -112,7 +117,10 @@ function changeResult () {
 //  Equals Button
 
 equalsBtn.addEventListener('click', () => {
-    changeResult()
     result.style.fontSize = '35px'
     input.style.fontSize = '16px'
+    changeResult()
+    numberClicked = []
+    numberClicked.push(result.textContent)
+    input.value = numberClicked
 })

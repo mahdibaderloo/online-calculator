@@ -120,3 +120,10 @@ body {
 .orange {
     background-color: #47371e;
 }
+
+
+@media screen and (max-width : 768px) {
+    .tool {
+        cursor: default;
+    }
+}

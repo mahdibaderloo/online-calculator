@@ -95,7 +95,7 @@ function clearAll () {
     changeResult()
     result.style.fontSize = '30px'
     input.style.fontSize = '25px'
-})
+}
 
 
 
@@ -121,6 +121,6 @@ equalsBtn.addEventListener('click', () => {
     input.style.fontSize = '16px'
     changeResult()
     numberClicked = []
-    numberClicked.push(result.textContent)
+    numberClicked.push(result.textContent.slice(1))
     input.value = numberClicked
 })

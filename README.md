@@ -1,11 +1,14 @@
-<h1>Online Calculator <img src="https://raw.githubusercontent.com/mahdibaderloo/online-calculator/09ee1698e8d5a1b94d9aa470018465fb6cfa334c/Images/calculator-svg.svg" width="50px"/><h1/>
+<h1>
+<img src="https://raw.githubusercontent.com/mahdibaderloo/online-calculator/09ee1698e8d5a1b94d9aa470018465fb6cfa334c/Images/calculator-svg.svg" width="50px"/>
+Online Calculator 
+</h1>
 
 <br>
 <br>
 
-> Use my online calculator and enjoy it 
+> Use my online calculator and enjoy it
 >
-> Check this [URL](https://mahdibaderloo.github.io/online-calculator/) to see this repo ❤️
+> Check this <a href="https://mahdibaderloo.github.io/online-calculator/">URL</a> to see this repo ❤️
 
 <br>
 

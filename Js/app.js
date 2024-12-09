@@ -55,13 +55,19 @@ function calculate (key) {
 
 //  Float Sign
 
-floatSign.addEventListener('click', () => {
+floatSign.addEventListener('click', event => {
     if (numberClicked.length == []) {
         numberClicked.push(0)
         numberClicked.push('.')
+        input.value += event.target.dataset.key
     }
-    if (!numberClicked.includes('.')) {
+    else if (!numberClicked.includes('.')) {
         numberClicked.push('.')
+        input.value += event.target.dataset.key
+    }
+    else if (numberClicked[numberClicked.length - 1] != '.') {
+        numberClicked.push('.')
+        input.value += event.target.dataset.key
     }
     changeResult()
 })

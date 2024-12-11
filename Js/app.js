@@ -7,6 +7,7 @@ let backBtn = document.querySelector('.back')
 let clearBtn = document.querySelector('.clear')
 let result = document.querySelector('.result')
 let floatSign = document.querySelector('.float')
+let operators = document.querySelectorAll('.operator')
 let equalsBtn = document.querySelector('.equals')
 
 
@@ -31,14 +32,6 @@ keys.forEach( num => {
 function calculate (key) {
 
     if (key.dataset.key != '=') {
-
-        if (numberClicked.length == []) {
-            if (key.dataset.key == '+' || key.dataset.key == '*' || key.dataset.key == '/') {
-                numberClicked = []
-                numberClicked.push(0)
-                input.value += 0
-            }
-        }
         // if (key.dataset.key == '0' || key.dataset.key == '00' || key.dataset.key == '000' && numberClicked.length == []) {
         //     numberClicked = []
         //     input.value = ''
@@ -71,6 +64,32 @@ floatSign.addEventListener('click', event => {
     }
     changeResult()
 })
+
+
+
+//  Operators
+
+operators.forEach( operator => {
+
+    operator.addEventListener('click', event => {
+        if (numberClicked.length == []) {
+            if (operator.dataset.key == '+' || operator.dataset.key == '*' || operator.dataset.key == '/' || operator.dataset.key == '-') {
+                
+                numberClicked = []
+                numberClicked.push(0)
+                numberClicked.push(operator.dataset.key)
+                input.value += 0
+                input.value += event.target.innerHTML
+            }
+        }
+        else if (numberClicked[numberClicked.length - 1] != event.target.dataset.key) {
+            numberClicked.push(event.target.dataset.key)
+            input.value += event.target.innerHTML
+        }
+        changeResult()
+    })
+})
+
 
 
 

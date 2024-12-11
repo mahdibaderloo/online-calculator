@@ -146,6 +146,7 @@ equalsBtn.addEventListener('click', () => {
     input.style.fontSize = '16px'
     changeResult()
     numberClicked = []
-    numberClicked.push(result.textContent.slice(1))
+    console.log(result.textContent.slice(2).split(',').join(''))
+    numberClicked.push(result.textContent.slice(1).split(',').join(''))
     input.value = numberClicked
 })

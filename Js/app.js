@@ -40,7 +40,7 @@ function calculate (key) {
         numberClicked.push(key.dataset.key)
         input.value += key.innerHTML
     }
-    ChangeInputValue()
+    ChangeInputSize()
     changeResult()
 }
 
@@ -62,7 +62,7 @@ floatSign.addEventListener('click', event => {
         numberClicked.push('.')
         input.value += event.target.dataset.key
     }
-    ChangeInputValue()
+    ChangeInputSize()
     changeResult()
 })
 
@@ -98,7 +98,7 @@ zeroNumbers.forEach (number => {
                 input.value += numberClicked.join('')
             }
         }
-        ChangeInputValue()
+        ChangeInputSize()
         changeResult()
     })
 })
@@ -124,7 +124,7 @@ operators.forEach( operator => {
             numberClicked.push(event.target.dataset.key)
             input.value += event.target.innerHTML
         }
-        ChangeInputValue()
+        ChangeInputSize()
         changeResult()
     })
 })
@@ -136,7 +136,7 @@ operators.forEach( operator => {
 
 backBtn.addEventListener('click', () => {
     deleteLastNumber()
-    ChangeInputValue()
+    ChangeInputSize()
     changeResult()
 })
 
@@ -183,6 +183,8 @@ function changeResult () {
     else {
         result.innerHTML = `= 0`
     }
+    ChangeInputSize()
+    ChangeResultSize()
     console.log(numberClicked)
 }
 
@@ -197,18 +199,34 @@ equalsBtn.addEventListener('click', () => {
     numberClicked = []
     numberClicked.push(Number(result.textContent.slice(1).split(',').join('')))
     input.value = numberClicked
+    changeResult()
+    ChangeResultSize()
 })
 
 
 
-//  Input
+//  Input FontSize
 
-function ChangeInputValue () {
+function ChangeInputSize () {
 
     if (input.value.length >= 13) {
         input.style.fontSize = '16px'
     }
     else {
         input.style.fontSize = '35px'    
+    }
+}
+
+
+
+//  Result FontSize
+
+function ChangeResultSize () {
+    if (result.textContent.length >= 15) {
+        console.log(result.textContent.length)
+        result.style.fontSize = '20px'
+    }
+    else {
+        result.style.fontSize = '30px'    
     }
 }

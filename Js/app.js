@@ -1,7 +1,7 @@
 // DOM Elements
 
 let keys = document.querySelectorAll('.key')
-let numbers = document.querySelectorAll('.number')
+let zeroNumbers = document.querySelectorAll('.zero')
 let input = document.querySelector('.calculate-input')
 let backBtn = document.querySelector('.back')
 let clearBtn = document.querySelector('.clear')
@@ -21,7 +21,12 @@ let numberClicked = [];
 
 keys.forEach( num => {
     num.addEventListener('click', event => {
-        calculate(event.target)
+        if (input.value.length <= 28) {
+            
+            if (!numberClicked[numberClicked.length - 1] == '0' || numberClicked[numberClicked.length - 1] == undefined) {
+                calculate(event.target)
+            }
+        }
     })
 })
 
@@ -32,15 +37,10 @@ keys.forEach( num => {
 function calculate (key) {
 
     if (key.dataset.key != '=') {
-        // if (key.dataset.key == '0' || key.dataset.key == '00' || key.dataset.key == '000' && numberClicked.length == []) {
-        //     numberClicked = []
-        //     input.value = ''
-        // }
         numberClicked.push(key.dataset.key)
         input.value += key.innerHTML
     }
-
-    console.log(numberClicked)
+    ChangeInputValue()
     changeResult()
 }
 
@@ -62,7 +62,45 @@ floatSign.addEventListener('click', event => {
         numberClicked.push('.')
         input.value += event.target.dataset.key
     }
+    ChangeInputValue()
     changeResult()
+})
+
+
+
+//  Zero Numbers
+
+zeroNumbers.forEach (number => {
+
+    number.addEventListener('click', event => {
+
+        if (input.value.length <= 28) {
+            
+            if (numberClicked.length == []) {
+                numberClicked.push(0)
+                input.value += 0
+            }
+            else if (event.target.dataset.key == '00' && numberClicked.length != 0) {
+                for (let i = 0; i <= 1; i++) {
+                    numberClicked.push('0')
+                    input.value += '0'
+                }
+            }
+            else if (event.target.dataset.key == '000' && numberClicked.length != 0) {
+                for (let i = 0; i <= 2; i++) {
+                    numberClicked.push('0')
+                    input.value += '0'
+                }
+            }
+            else {
+                numberClicked.push(event.target.dataset.key)
+                input.value = ''
+                input.value += numberClicked.join('')
+            }
+        }
+        ChangeInputValue()
+        changeResult()
+    })
 })
 
 
@@ -82,10 +120,11 @@ operators.forEach( operator => {
                 input.value += event.target.innerHTML
             }
         }
-        else if (numberClicked[numberClicked.length - 1] != event.target.dataset.key) {
+        else if (numberClicked[numberClicked.length - 1] != event.target.dataset.key && numberClicked.length <= 28) {
             numberClicked.push(event.target.dataset.key)
             input.value += event.target.innerHTML
         }
+        ChangeInputValue()
         changeResult()
     })
 })
@@ -97,6 +136,7 @@ operators.forEach( operator => {
 
 backBtn.addEventListener('click', () => {
     deleteLastNumber()
+    ChangeInputValue()
     changeResult()
 })
 
@@ -127,14 +167,23 @@ function clearAll () {
 //  Change Result Function
 
 function changeResult () {
+
     if (numberClicked.join('')) {
         let resultJoin = numberClicked.join('')
         let resultCalc = eval(resultJoin)
-        result.innerHTML = `= ${resultCalc.toLocaleString()}` 
+
+        if (resultJoin.length > 9) {
+            let bigNumber = resultCalc.toExponential()
+            result.innerHTML = `= ${bigNumber.toLocaleString()}` 
+        }
+        else {
+            result.innerHTML = `= ${resultCalc.toLocaleString()}` 
+        }
     }
     else {
         result.innerHTML = `= 0`
     }
+    console.log(numberClicked)
 }
 
 
@@ -146,7 +195,20 @@ equalsBtn.addEventListener('click', () => {
     input.style.fontSize = '16px'
     changeResult()
     numberClicked = []
-    console.log(result.textContent.slice(2).split(',').join(''))
-    numberClicked.push(result.textContent.slice(1).split(',').join(''))
+    numberClicked.push(Number(result.textContent.slice(1).split(',').join('')))
     input.value = numberClicked
 })
+
+
+
+//  Input
+
+function ChangeInputValue () {
+
+    if (input.value.length >= 13) {
+        input.style.fontSize = '16px'
+    }
+    else {
+        input.style.fontSize = '35px'    
+    }
+}

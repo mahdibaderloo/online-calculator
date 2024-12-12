@@ -52,6 +52,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: start;
+    flex-wrap: wrap;
     font-size: 35px;
     margin-top: 20px;
     transition: all 0.3s ease;

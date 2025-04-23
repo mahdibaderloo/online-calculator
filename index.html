@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/6d9cc78e8f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Styles/app.css">
-    <link rel="shortcut icon" href="Images/calculator-svg.svg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6d9cc78e8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="Styles/app.css" />
+    <link
+      rel="shortcut icon"
+      href="Images/calculator-svg.svg"
+      type="image/x-icon"
+    />
     <title>Calculator</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="container">
-        <div class="calculator-box">
+      <div class="calculator-box">
+        <section class="calculator_result-box">
+          <input type="text" class="calculate-input" readonly />
+          <div class="result">= 0</div>
+        </section>
 
-            <section class="calculator_result-box">
-                <input type="text" class="calculate-input" readonly>
-                <div class="result">= 0</div>
-            </section>
-
-            <section class="calculator_keys-box">
-                <ul class="calculator-keys">
-                    <li class="tool orange clear">C</li>
-                    <li class="tool orange back"><i class="fas fa-backspace"></i></li> 
-                    <li class="tool float orange" data-key=".">.</li>
-                    <li class="tool operator blue" data-key="*">×</li>
-                    <li class="tool key number" data-key="7">7</li>
-                    <li class="tool key number" data-key="8">8</li>
-                    <li class="tool key number" data-key="9">9</li>
-                    <li class="tool operator blue" data-key="/">÷</li>
-                    <li class="tool key number" data-key="4">4</li>
-                    <li class="tool key number" data-key="5">5</li>
-                    <li class="tool key number" data-key="6">6</li>
-                    <li class="tool operator blue" data-key="-">−</li>
-                    <li class="tool key number" data-key="1">1</li>
-                    <li class="tool key number" data-key="2">2</li>
-                    <li class="tool key number" data-key="3">3</li>
-                    <li class="tool operator blue" data-key="+">+</li>
-                    <li class="tool zero number" data-key="0">0</li> 
-                    <li class="tool zero number" data-key="00">00</li> 
-                    <li class="tool zero number" data-key="000">000</li> 
-                    <li class="tool equals blue" data-key="=">=</li>
-                </ul>
-            </section>
-        </div>
+        <section class="calculator_keys-box">
+          <ul class="calculator-keys">
+            <li class="tool orange clear">C</li>
+            <li class="tool orange back"><i class="fas fa-backspace"></i></li>
+            <li class="tool float orange" data-key=".">.</li>
+            <li class="tool blue" data-key="%">%</li>
+            <li class="tool orange" data-key="factorial">x!</li>
+            <li class="tool orange" data-key="radical">√</li>
+            <li class="tool orange" data-key="pow">xⁿ</li>
+            <li class="tool operator blue" data-key="*">×</li>
+            <li class="tool key number" data-key="7">7</li>
+            <li class="tool key number" data-key="8">8</li>
+            <li class="tool key number" data-key="9">9</li>
+            <li class="tool operator blue" data-key="/">÷</li>
+            <li class="tool key number" data-key="4">4</li>
+            <li class="tool key number" data-key="5">5</li>
+            <li class="tool key number" data-key="6">6</li>
+            <li class="tool operator blue" data-key="-">−</li>
+            <li class="tool key number" data-key="1">1</li>
+            <li class="tool key number" data-key="2">2</li>
+            <li class="tool key number" data-key="3">3</li>
+            <li class="tool operator blue" data-key="+">+</li>
+            <li class="tool zero number" data-key="0">0</li>
+            <li class="tool zero number" data-key="00">00</li>
+            <li class="tool zero number" data-key="000">000</li>
+            <li class="tool equals blue" data-key="=">=</li>
+          </ul>
+        </section>
+      </div>
     </div>
 
-
     <script type="module" src="Js/app.js"></script>
-
-</body>
+  </body>
 </html>

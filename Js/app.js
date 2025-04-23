@@ -9,6 +9,7 @@ let result = document.querySelector(".result");
 let floatSign = document.querySelector(".float");
 let operators = document.querySelectorAll(".operator");
 let equalsBtn = document.querySelector(".equals");
+let powBtn = document.querySelector(".pow");
 
 //  Main Array
 
@@ -121,6 +122,19 @@ operators.forEach((operator) => {
     changeResult();
   });
 });
+
+// Pow Button
+
+powBtn.addEventListener("click", (e) => {
+  if (numberClicked.length == []) {
+    numberClicked.push(0);
+    input.value += 0;
+  }
+  numberClicked.push(e.target.dataset.key);
+  input.value += "^";
+});
+
+function power() {}
 
 //  Back Button
 

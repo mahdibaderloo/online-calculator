@@ -10,6 +10,7 @@ let floatSign = document.querySelector(".float");
 let operators = document.querySelectorAll(".operator");
 let equalsBtn = document.querySelector(".equals");
 let powBtn = document.querySelector(".pow");
+let factorialBtn = document.querySelector(".factorial");
 
 //  Main Array
 
@@ -141,6 +142,17 @@ function factorial(number) {
 
   return number * factorial(number - 1);
 }
+
+// Factorial Button
+
+factorialBtn.addEventListener("click", () => {
+  let factorialResult = factorial(Number(input.value));
+
+  input.value += "!";
+  numberClicked = [];
+  numberClicked.push(factorialResult);
+  changeResult();
+});
 
 //  Back Button
 

@@ -17,11 +17,7 @@ Online Calculator
 
 - ✨ Features :
    - Basic arithmetic operations (+, –, ×, ÷)
-   - Advanced operations:
-       - Power (xⁿ)
-       - Square root (√x)
-       - Percentage (%)
-       - Factorial (x!)
+   - Advanced operations: (xⁿ, √x, %, x!)
    - Clear and Delete functionality
    - Keyboard input support
    - Responsive layout

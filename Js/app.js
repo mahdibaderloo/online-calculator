@@ -167,7 +167,12 @@ radicalBtn.addEventListener("click", () => {
 
 function radical(index) {
   let afterRadical = Number(numberClicked.slice(index + 1).join(""));
-  console.log(index);
+
+  if (isNaN(afterRadical)) {
+    numberClicked = [];
+    numberClicked.push(NaN);
+    input.value = numberClicked.join("");
+  }
 
   if (!isNaN(afterRadical)) {
     let radicalResult = Math.sqrt(afterRadical);

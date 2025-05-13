@@ -159,7 +159,22 @@ factorialBtn.addEventListener("click", () => {
 
 radicalBtn.addEventListener("click", () => {
   input.value += "√";
+  numberClicked.push("√");
 });
+
+//  Radical
+
+function radical(index) {
+  let afterRadical = Number(numberClicked.slice(index + 1).join(""));
+  console.log(index);
+
+  if (!isNaN(afterRadical)) {
+    let radicalResult = Math.sqrt(afterRadical);
+    numberClicked = numberClicked.slice(0, index);
+    numberClicked.push(radicalResult);
+    input.value = numberClicked.join("");
+  }
+}
 
 //  Back Button
 
@@ -206,12 +221,15 @@ function changeResult() {
   }
   ChangeInputSize();
   ChangeResultSize();
-  //   console.log(numberClicked);
 }
 
 //  Equals Button
 
 equalsBtn.addEventListener("click", () => {
+  let indexOfRadical = numberClicked.indexOf("√");
+
+  if (indexOfRadical > -1) radical(indexOfRadical);
+
   result.style.fontSize = "35px";
   input.style.fontSize = "16px";
   changeResult();

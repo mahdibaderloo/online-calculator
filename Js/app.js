@@ -11,6 +11,7 @@ let operators = document.querySelectorAll(".operator");
 let equalsBtn = document.querySelector(".equals");
 let powBtn = document.querySelector(".pow");
 let factorialBtn = document.querySelector(".factorial");
+let radicalBtn = document.querySelector(".radical");
 
 //  Main Array
 
@@ -152,6 +153,12 @@ factorialBtn.addEventListener("click", () => {
   numberClicked = [];
   numberClicked.push(factorialResult);
   changeResult();
+});
+
+// Radical Button
+
+radicalBtn.addEventListener("click", () => {
+  input.value += "√";
 });
 
 //  Back Button

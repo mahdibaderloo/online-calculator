@@ -6,14 +6,30 @@ Online Calculator
 <br>
 <br>
 
-> Use my online calculator and enjoy it
+> This is a clean and responsive web-based calculator
 >
-> Check this <a href="https://mahdibaderloo.github.io/online-calculator/">URL</a> to see this repo ❤️
+> It supports both basic and advanced operations, making it a handy tool for daily use.
+
+>
+> 🚀 Try it live here: <a href="https://mahdibaderloo.github.io/online-calculator/">Calculator Demo</a>
 
 <br>
 
-### made with :
+- ✨ Features :
+   - Basic arithmetic operations (+, –, ×, ÷)
+   - Advanced operations: (xⁿ, √x, %, x!)
+   - Clear and Delete functionality
+   - Keyboard input support
+   - Responsive layout
+   - Clean and modern UI
+
+<br>
+
+### 🛠️ Technologies Used :
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
+
+
 

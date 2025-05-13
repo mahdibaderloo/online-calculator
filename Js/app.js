@@ -139,7 +139,8 @@ powBtn.addEventListener("click", (e) => {
 // Factorial
 
 function factorial(number) {
-  if (number === 1) return 1;
+  if (number < 0 || !Number.isInteger(number)) return NaN;
+  if (number === 0 || number === 1) return 1;
 
   return number * factorial(number - 1);
 }
